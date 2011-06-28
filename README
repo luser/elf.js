@@ -1,0 +1,12 @@
+elf.js: A (very simple) ELF parser in JavaScript.
+
+Relies heavily on typed arrays, as well as:
+https://github.com/davidflanagan/BufferView
+and DataView, or:
+https://github.com/davidflanagan/DataView.js
+and:
+https://github.com/luser/uint64.js
+
+Usage:
+  var elf = new ELF(buffer);
+where |arraybuffer| is an ArrayBuffer containing the bytes of the ELF file.
