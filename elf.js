@@ -298,7 +298,7 @@ var ELF = (function() {
         if (shstrndx >= elf.sections.length)
             throw "Couldn't find section header string table!";
         //XXX: handle 64-bit offsets here
-        var strtable = new Uint8Array(buffer, elf.sections[shstrndx].offset.lo,
+        var strtable = new Uint8Array(elf.buffer, elf.sections[shstrndx].offset.lo,
                                       elf.sections[shstrndx].size.lo);
         for (var i=0; i<elf.sections.length; i++) {
             elf.sections[i].name = readCString(strtable, elf.sections[i].nameindex);
